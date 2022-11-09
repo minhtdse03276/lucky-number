@@ -1,0 +1,29 @@
+<div class="home">
+  <div class="logo">
+    <div>
+      <img src="/assets/images/logo-TPBank.png" alt="">
+    </div>
+    <div class="title">Lucky Number Devops Center</div>
+  </div>
+  <form action="" class="content" (submit)="onSubmit(from,to)">
+    <div class="form-group">
+      <label for="">From</label>
+      <input type="number" [(ngModel)]="from" class="form-control" id="from" placeholder="Enter number"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group" style="margin-top: 10px">
+      <label for="">To</label>
+      <input type="number" [(ngModel)]="to" class="form-control" id="from" placeholder="Enter number"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div>
+      <button class="btn luckey" (submit)="onSubmit(from,to)">LUCKY ROLL</button>
+    </div>
+    <div>
+    </div>
+    <div *ngIf="showLoading" class="lds-hourglass"></div>
+    <div *ngIf="showResult" class="form-group result" style="margin-top: 25px; color: red; font-weight: 600;">
+      <h1 class="text-center" id="value">{{result}} </h1>
+    </div>
+  </form>
+</div>
